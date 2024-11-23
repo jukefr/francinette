@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_putchar_fd.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kjullien <kjullien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/23 06:31:45 by kjullien          #+#    #+#             */
+/*   Updated: 2024/11/23 06:31:45 by kjullien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "my_utils.h"
 
@@ -21,7 +33,8 @@ int test_putchar_fd()
 
 	lseek(fd, SEEK_SET, 0);
 	char content[10] = {0};
-	read(fd, content, 10);
+	int fix_read = read(fd, content, 10);
+	(void)fix_read;
 
 	char *expected = "axyz\n";
 	if(strcmp(content, expected) != 0)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_putnbr_fd.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kjullien <kjullien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/23 06:32:28 by kjullien          #+#    #+#             */
+/*   Updated: 2024/11/23 06:32:28 by kjullien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "my_utils.h"
 
@@ -22,7 +34,8 @@ int test_putnbr_fd()
 
 	lseek(fd, SEEK_SET, 0);
 	char content[100] = {0};
-	read(fd, content, 100);
+	int fix_read = read(fd, content, 100);
+	(void)fix_read;
 
 	char expected[1000];
 	sprintf(expected, "0\n10000043\n-10000043\n%i\n%i\n", INT_MAX, INT_MIN);

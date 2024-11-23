@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_putstr_fd.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kjullien <kjullien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/23 06:32:49 by kjullien          #+#    #+#             */
+/*   Updated: 2024/11/23 06:32:49 by kjullien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "my_utils.h"
 
@@ -21,7 +33,8 @@ int test_putstr_fd()
 
 	lseek(fd, SEEK_SET, 0);
 	char content[100] = {0};
-	read(fd, content, 100);
+	int fix_read = read(fd, content, 100);
+	(void)fix_read;
 
 	char *expected = "abcdef\n1234\t567\nend!";
 	if(strcmp(content, expected) != 0)
